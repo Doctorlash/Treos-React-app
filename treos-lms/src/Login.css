@@ -1,10 +1,11 @@
 
 .login-container {
   max-width: min(400px, 90%);
-  margin: clamp(20px, 5vh, 50px) auto;
+  margin: clamp(100px, 5vh, 50px) auto;
   padding: clamp(15px, 3vw, 20px);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
 }
 
 .login-container h2 {
@@ -18,6 +19,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(15px, 3vh, 20px);
+  width: 100%;
 }
 
 .login-container input {
@@ -26,6 +28,8 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: clamp(14px, 2.5vw, 16px);
+  
+  box-sizing: border-box;
 }
 
 .login-container button {
@@ -38,9 +42,12 @@
   cursor: pointer;
   font-size: clamp(14px, 2.5vw, 16px);
   transition: background-color 0.3s;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+
 }
 
-.login-container button:hover {
+.login-container button:hover,
+.login-container button:active { /* Added active state for touch devices */
   background-color: #0056b3;
 }
 
@@ -48,6 +55,7 @@
   text-align: center;
   margin: clamp(15px, 3vh, 20px) 0;
   position: relative;
+  width: 100%;
 }
 
 .divider::before,
@@ -75,4 +83,21 @@
   font-size: clamp(12px, 2vw, 14px);
 }
 
-/* Removed media query since we're using fluid responsive units */
+@media screen and (max-width: 480px) {
+  .login-container {
+    margin: 50px auto;
+    padding: 15px;
+  }
+  
+  .login-container input,
+  .login-container button {
+    font-size: 16px; /* Prevent zoom on focus in iOS */
+  }
+}
+
+/* Enable smooth scrolling for iOS momentum scroll */
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
