@@ -1,0 +1,13 @@
+
+.carousel-container {
+    width: 50%;
+    margin: auto;
+  }
+  
+  .carousel-image {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  

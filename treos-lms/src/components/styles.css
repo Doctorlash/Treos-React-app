@@ -1,0 +1,281 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .search-bar input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 200px;
+    outline: none;
+  }
+  
+  .search-bar input:focus {
+    border-color: #007bff;
+  }
+  
+
+  header {
+    display: flex;
+   
+    align-items: center;
+    padding: 20px 20px;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease-out;
+}
+
+.logo img {
+    height: 80px;
+    transition: all 0.3s ease;
+}
+
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.nav {
+  flex: 3;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-item {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff5722;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-item a {
+  color: #fff;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+}
+
+.cta-btn {
+  padding: 12px 30px;
+  background-color: #ff5722;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #f44336;
+  transform: scale(1.05);
+}
+
+/* Animation for the header */
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+}
+to {
+  transform: translateY(0);
+}
+}
+
+  button.cta-btn {
+    background-color: #ff5722;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.cta-btn:hover {
+    background-color: #f44336;
+  }
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-content {
+    z-index: 10;
+    max-width: 700px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-btn {
+    padding: 15px 30px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  .cta-btn:hover {
+    background-color: #f44336;
+  }
+  
+  
+/* Featured Courses */
+.featured-courses {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .courses-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .course-card {
+    background-color: #333;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+  }
+
+  .course-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .course-card p {  
+    font-size: 1rem;
+  margin: 10px 0;
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: #111;
+  text-align: center;
+  padding: 20px;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .courses-list, .benefits-list {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+      }
+    
+      .logo {
+        font-size: 2rem;
+      }
+    
+      .nav-list {
+        flex-direction: column;
+        gap: 15px;
+      }
+    
+    .course-card, .benefit-item {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .header nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .hero-content h1 {
+        font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+}

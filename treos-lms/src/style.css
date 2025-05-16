@@ -1,0 +1,70 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+   
+  }
+  
+ 
+
+
+  
+
+  
+ 
+
+/* Footer */
+.footer {
+  background-color: #111;
+  text-align: center;
+  padding: 20px;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .courses-list, .benefits-list {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .course-card, .benefit-item {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .header nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .hero-content h1 {
+        font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+}
