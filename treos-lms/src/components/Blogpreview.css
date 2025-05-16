@@ -3,18 +3,20 @@
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .blog-preview h2 {
   text-align: center;
   margin-bottom: 3rem;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  width: 100%;
 }
 
 .blog-card {
@@ -23,6 +25,7 @@
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .blog-card:hover {
@@ -31,31 +34,33 @@
 
 .blog-card img {
   width: 100%;
-  height: 200px;
+  height: clamp(150px, 30vw, 200px);
   object-fit: cover;
 }
 
 .blog-card h3 {
-  padding: 1rem;
+  padding: clamp(0.75rem, 2vw, 1rem);
   margin: 0;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 3vw, 1.25rem);
 }
 
 .blog-card p {
-  padding: 0 1rem;
+  padding: 0 clamp(0.75rem, 2vw, 1rem);
   color: #666;
   line-height: 1.5;
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
 .blog-card a {
   display: inline-block;
-  margin: 1rem;
-  padding: 0.5rem 1rem;
+  margin: clamp(0.75rem, 2vw, 1rem);
+  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1rem);
   color: #007bff;
   text-decoration: none;
   border: 1px solid #007bff;
   border-radius: 4px;
   transition: all 0.3s ease;
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
 .blog-card a:hover {
@@ -63,16 +68,39 @@
   color: #fff;
 }
 
+@media (max-width: 1024px) {
+  .blog-preview {
+    padding: 3rem 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .blog-preview {
     padding: 2rem 1rem;
   }
   
-  .blog-preview h2 {
-    font-size: 2rem;
+  .blog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-preview {
+    padding: 1.5rem 0.75rem;
   }
   
   .blog-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .blog-preview {
+    max-width: 1600px;
+  }
+  
+  .blog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }

@@ -1,39 +1,65 @@
 .hero {
   position: relative;
   background-color: #1f1f1f;
-  background-image: url('../assets/background-video.mp4');
+ 
   background-size: cover;
-  height: 100vh;
+  background-position: center;
+  min-height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  padding: 2rem;
 }
 
 .hero-content {
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .hero p {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   margin-bottom: 30px;
+  line-height: 1.5;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-btn {
-  padding: 15px 30px;
+  padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 30px);
   background-color: #ff6600;
   border: none;
   color: white;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  min-width: 150px;
 }
 
 .cta-btn:hover {
   background-color: #ff4500;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
 }
 

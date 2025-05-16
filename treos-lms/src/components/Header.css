@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: clamp(0.5rem, 2vw, 2rem);
   background-color: #1a1a1a;
   position: fixed;
   width: 100%;
@@ -13,10 +13,11 @@
 
 .logo-container {
   flex: 1;
+  cursor: pointer;
 }
 
 .logo img {
-  height: 80px;
+  height: clamp(40px, 8vw, 80px);
   width: auto;
 }
 
@@ -29,9 +30,9 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin: 1;
-  padding: 1;
-  gap: 4rem;
+  margin: 0;
+  padding: 0;
+  gap: clamp(1rem, 4vw, 4rem);
 }
 
 .nav-item {
@@ -41,7 +42,7 @@
 .nav-item a {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 .search-bar {
@@ -51,12 +52,12 @@
 }
 
 .search-bar input {
-  padding: 0.5rem 1rem;
+  padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.5rem, 2vw, 1rem);
   border-radius: 20px;
   border: none;
   background-color: #333;
   color: white;
-  width: 200px;
+  width: clamp(150px, 20vw, 200px);
 }
 
 .search-bar input::placeholder {
@@ -64,12 +65,21 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .nav-item {
-    margin: 0 1rem;
+  .nav {
+    display: none;
   }
   
-  .search-bar input {
-    width: 150px;
+  .search-bar {
+    display: none;
+  }
+  
+  .logo-container:active ~ .nav,
+  .logo-container:active ~ .search-bar {
+    display: block;
+  }
+  
+  .nav-list {
+    gap: clamp(0.5rem, 2vw, 2rem);
   }
 }
 
@@ -80,38 +90,65 @@
   }
   
   .logo-container {
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.5rem, 2vh, 1rem);
+  }
+  
+  .logo-container:active ~ .nav,
+  .logo-container:active ~ .search-bar {
+    display: block;
   }
   
   .nav-list {
     flex-direction: column;
+    gap: clamp(0.3rem, 1.5vh, 0.5rem);
   }
   
   .nav-item {
-    margin: 0.5rem 0;
+    margin: clamp(0.3rem, 1vh, 0.5rem) 0;
   }
   
   .search-bar {
-    margin-top: 1rem;
+    margin-top: clamp(0.5rem, 2vh, 1rem);
     width: 100%;
     justify-content: center;
   }
   
   .search-bar input {
-    width: 80%;
+    width: min(90%, 400px);
   }
 }
 
-@media screen and (max-width: 480px) {
-  .logo img {
-    height: 40px;
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
+    flex-direction: row;
+    padding: 0.5rem;
   }
   
+  .logo img {
+    height: clamp(30px, 6vh, 40px);
+  }
+  
+  .logo-container:active ~ .nav,
+  .logo-container:active ~ .search-bar {
+    display: block;
+  }
+  
+  .nav-list {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .nav-item {
+    margin: 0;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
   .nav-item a {
-    font-size: 1rem;
+    padding: 0.5rem;
   }
   
   .search-bar input {
-    width: 90%;
+    font-size: 16px;
   }
 }

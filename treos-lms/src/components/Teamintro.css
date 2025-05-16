@@ -1,26 +1,27 @@
 
 .team-intro {
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 2vw, 2rem);
   text-align: center;
 }
 
 .team-intro h2 {
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  max-width: min(1200px, 90vw);
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .team-card {
   background: #fff;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
@@ -30,58 +31,32 @@
 }
 
 .team-card img {
-  width: 200px;
-  height: 200px;
+  width: clamp(120px, 20vw, 200px);
+  height: clamp(120px, 20vw, 200px);
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
 }
 
 .team-card h4 {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 1.25vw, 1.25rem);
   margin-bottom: 0.5rem;
 }
 
 .team-card p {
   color: #666;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1vw, 1rem);
 }
 
-@media screen and (max-width: 768px) {
-  .team-intro {
-    padding: 3rem 1rem;
-  }
-  
-  .team-intro h2 {
-    font-size: 2rem;
-  }
-  
-  .team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .team-card img {
-    width: 150px;
-    height: 150px;
+@media (hover: hover) {
+  .team-card:hover {
+    transform: translateY(-5px);
   }
 }
 
-@media screen and (max-width: 480px) {
-  .team-intro h2 {
-    font-size: 1.75rem;
-  }
-  
-  .team-card {
-    padding: 1rem;
-  }
-  
+@supports (aspect-ratio: 1) {
   .team-card img {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .team-card h4 {
-    font-size: 1.1rem;
+    aspect-ratio: 1;
+    height: auto;
   }
 }

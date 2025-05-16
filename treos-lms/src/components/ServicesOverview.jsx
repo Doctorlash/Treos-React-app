@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaUsers, FaPencilAlt, FaBullseye, FaChartLine, FaCogs, 
          FaEnvelope, FaLightbulb, FaGraduationCap, FaShieldAlt } from 'react-icons/fa';
+import './ServicesOverview.css'
 
 const services = [
   {

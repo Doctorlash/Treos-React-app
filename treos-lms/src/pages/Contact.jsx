@@ -64,10 +64,17 @@ const Contact = () => {
   return (
     <div className="contact">
       <section className="contact-hero" style={{
-        backgroundImage: "url('../4.jpg')",
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../4.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        minHeight: '60vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        padding: '4rem 2rem'
       }}>
         <div className="contact-hero-content">
           <h1>Let's Start a Conversation</h1>

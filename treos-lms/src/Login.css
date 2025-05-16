@@ -1,41 +1,42 @@
 
 .login-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
+  max-width: min(400px, 90%);
+  margin: clamp(20px, 5vh, 50px) auto;
+  padding: clamp(15px, 3vw, 20px);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .login-container h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: clamp(20px, 4vh, 30px);
   color: #333;
+  font-size: clamp(18px, 4vw, 24px);
 }
 
 .login-container form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(15px, 3vh, 20px);
 }
 
 .login-container input {
   width: 100%;
-  padding: 12px;
+  padding: clamp(8px, 2vw, 12px);
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
 }
 
 .login-container button {
   width: 100%;
-  padding: 12px;
+  padding: clamp(8px, 2vw, 12px);
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   transition: background-color 0.3s;
 }
 
@@ -45,7 +46,7 @@
 
 .divider {
   text-align: center;
-  margin: 20px 0;
+  margin: clamp(15px, 3vh, 20px) 0;
   position: relative;
 }
 
@@ -70,29 +71,8 @@
 .error {
   color: #dc3545;
   text-align: center;
-  margin: 10px 0;
-  font-size: 14px;
+  margin: clamp(8px, 2vh, 10px) 0;
+  font-size: clamp(12px, 2vw, 14px);
 }
 
-@media screen and (max-width: 480px) {
-  .login-container {
-    max-width: 100%;
-    margin: 20px;
-    padding: 15px;
-  }
-  
-  .login-container input,
-  .login-container button {
-    padding: 10px;
-    font-size: 14px;
-  }
-  
-  .login-container h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .divider {
-    margin: 15px 0;
-  }
-}
+/* Removed media query since we're using fluid responsive units */
