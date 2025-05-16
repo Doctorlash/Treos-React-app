@@ -11,7 +11,8 @@ import {
   onSnapshot,
   increment
 } from 'firebase/firestore';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+
 import './Dashboard.css';
 
 const Dashboard = () => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import logoUrl from '../SAGE LOGO ICON WHITE.png';
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        <img src="src/SAGE LOGO ICON WHITE.png" alt="Treos Logo" />
+        <img src={logoUrl || "/placeholder.svg"} alt="Treos Logo" />
       </motion.div>
         
       </div>
@@ -38,7 +39,7 @@ const Header = () => {
           >
             <Link to="/services">Services</Link>
           </motion.li>
-          <motion.li className="nav-item"
+          <motion.li className="nav-item"
             whileHover={{ scale: 1.1, color: '#ff5722' }}
             whileTap={{ scale: 0.95 }}
           >

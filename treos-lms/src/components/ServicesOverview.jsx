@@ -1,48 +1,50 @@
 import React from 'react';
+import { FaUsers, FaPencilAlt, FaBullseye, FaChartLine, FaCogs, 
+         FaEnvelope, FaLightbulb, FaGraduationCap, FaShieldAlt } from 'react-icons/fa';
 
 const services = [
   {
-    icon: '📱',
+    icon: <FaUsers />,
     title: 'Social Media Management',
     description: 'Professional management of your social media presence across platforms.',
   },
   {
-    icon: '✍️',
+    icon: <FaPencilAlt />,
     title: 'Content Creation', 
     description: 'Engaging and relevant content that resonates with your target audience.',
   },
   {
-    icon: '🎯',
+    icon: <FaBullseye />,
     title: 'Ad Campaigns',
     description: 'Strategic paid advertising campaigns to reach your business goals.',
   },
   {
-    icon: '📊',
+    icon: <FaChartLine />,
     title: 'Strategy Development',
     description: 'Custom digital strategies aligned with your business objectives.',
   },
   {
-    icon: '⚙️',
+    icon: <FaCogs />,
     title: 'Account Setup & Optimization',
     description: 'Professional setup and optimization of your digital platforms.',
   },
   {
-    icon: '📧',
+    icon: <FaEnvelope />,
     title: 'Email Marketing',
     description: 'Targeted email campaigns to nurture and convert your audience.',
   },
   {
-    icon: '💡',
+    icon: <FaLightbulb />,
     title: 'Consultation',
     description: 'Expert guidance and advice for your digital marketing needs.',
   },
   {
-    icon: '🎓',
+    icon: <FaGraduationCap />,
     title: 'Online Training',
     description: 'Comprehensive training to help you master digital marketing.',
   },
   {
-    icon: '🔒',
+    icon: <FaShieldAlt />,
     title: 'Security',
     description: 'Protecting your digital assets and ensuring online safety.',
   },
@@ -70,7 +72,12 @@ const ServicesOverview = () => {
             gap: '1rem',
             fontStyle: 'italic'
           }}>
-            <span style={{fontSize: '2rem'}}>{service.icon}</span>
+            <span style={{
+              fontSize: '2rem',
+              color: '#fff'
+            }}>
+              {service.icon}
+            </span>
             <div>
               <h3 style={{margin: '0', color: '#fff'}}>{service.title}</h3>
               <p style={{color: '#ecf0f1', margin: '0.5rem 0'}}>{service.description}</p>

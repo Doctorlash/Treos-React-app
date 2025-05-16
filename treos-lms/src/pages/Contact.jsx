@@ -4,13 +4,16 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import './Contact.css';
 import { FaBuilding, FaPhoneAlt, FaShareAlt, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
 
+// Import map URL
+const mapUrl = new URL('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596698663!2d-74.25987368715491!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1627309374797!5m2!1sen!2sus', import.meta.url);
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
-    phone: '', // Added phone field
-    subject: '' // Added subject field
+    phone: '',
+    subject: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -112,7 +115,7 @@ const Contact = () => {
           <div className="map-container glass-effect">
             <iframe 
               title="Office Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596698663!2d-74.25987368715491!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1627309374797!5m2!1sen!2sus"
+              src={mapUrl || "about:blank"}
               width="100%"
               height="450"
               style={{ border: 0, borderRadius: '10px' }}

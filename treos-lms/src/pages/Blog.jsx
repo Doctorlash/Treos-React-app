@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaSearch } from 'react-icons/fa';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase'; // Assuming firebase config is in parent directory
+
 import './Blog.css';
 
 const Blog = () => {
@@ -16,7 +17,8 @@ const Blog = () => {
         const querySnapshot = await getDocs(collection(db, "posts"));
         const posts = querySnapshot.docs.map(doc => ({
           id: doc.id,
-          ...doc.data()
+          ...doc.data(),
+          imageUrl: doc.data().imageUrl ? new URL(doc.data().imageUrl, import.meta.url).href : placeholderImage
         }));
         setBlogPosts(posts);
         setLoading(false);
@@ -59,6 +61,9 @@ const Blog = () => {
         {blogPosts.map((post, index) => (
           <article key={post.id} className="blog-card">
             <div className="card-content">
+              {post.imageUrl && (
+                <img src={post.imageUrl || placeholderImage} alt={post.title} className="post-image" />
+              )}
               <span className="category-tag">{post.category}</span>
               <div className="post-meta">
                 <span className="author">{post.author}</span>
@@ -104,6 +109,9 @@ const Blog = () => {
           <h3>Trending Articles</h3>
           {blogPosts.slice(0, 3).map((post, index) => (
             <div key={post.id} className="trending-item">
+              {post.imageUrl && (
+                <img src={post.imageUrl || placeholderImage} alt={post.title} className="trending-image" />
+              )}
               <span className="trending-number">{index + 1}</span>
               <div className="trending-content">
                 <h4>{post.title}</h4>
@@ -116,5 +124,7 @@ const Blog = () => {
     </div>
   );
 };
+
+
 
 export default Blog;

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './Footer.css';
+import logoUrl from '../SAGE LOGO ICON BLUE.png';
 
 const Footer = () => {
   const socialLinks = [
@@ -26,7 +27,7 @@ const Footer = () => {
             transition={{ duration: 0.3 }}
           >
             <motion.img 
-              src="src/SAGE LOGO ICON BLUE.png" 
+              src={logoUrl || "/placeholder.svg"}
               alt="SageConsolidated Logo"
               className="footer-logo"
               initial={{ rotate: -10 }}

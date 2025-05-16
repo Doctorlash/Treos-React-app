@@ -1,12 +1,15 @@
 import React from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
+import image1 from '../3.jpg';
+import image2 from '../4.jpg';
+import image3 from '../7.jpg';
 
 import './imageslider.css';
 
 const images = [
-  { url: 'src/3.jpg' },
-  { url: 'src/4.jpg' },
-  { url: 'src/7.jpg' },
+  { url: image1 },
+  { url: image2 },
+  { url: image3 },
   // Add more images as needed
 ];
 

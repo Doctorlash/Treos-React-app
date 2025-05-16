@@ -1,16 +1,18 @@
 import React from 'react';
 import './Teamintro.css'
+import setoImage from '../seto.jpg';
+import toluImage from '../my picture.jpg';
 
 const teamMembers = [
   {
-    name: 'Oluwaseto David',
+    name: 'Oluwaseto David', 
     role: 'Founder',
-    image: 'src/seto.jpg',
+    image: setoImage,
   },
   {
     name: 'Ikumawoyi Toluwalase',
-    role: 'Software Developer',
-    image: 'src/my picture.jpg',
+    role: 'Software Developer', 
+    image: toluImage,
   },
   // Add more team members as needed
 ];
@@ -21,7 +23,7 @@ const TeamIntro = () => (
     <div className="team-grid">
       {teamMembers.map((member, index) => (
         <div key={index} className="team-card">
-          <img src={member.image} alt={member.name} />
+          <img src={member.image || "/placeholder.svg"} alt={member.name} />
           <h4>{member.name}</h4>
           <p>{member.role}</p>
         </div>

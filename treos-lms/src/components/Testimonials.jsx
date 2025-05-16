@@ -1,16 +1,18 @@
 import React from 'react';
 import './Testimonial.css';
+import testimonial1Image from '../6.jpg';
+import testimonial2Image from '../8.jpg';
 
 const testimonials = [
   {
     name: 'Jane Doe',
     feedback: 'Sageconsolidated transformed our social media presence!',
-    image: '/images/testimonial1.jpg',
+    image: testimonial1Image,
   },
   {
     name: 'John Smith',
     feedback: 'Their strategies boosted our engagement significantly.',
-    image: '/images/testimonial2.jpg',
+    image: testimonial2Image,
   },
   // Add more testimonials as needed
 ];
@@ -22,7 +24,7 @@ const Testimonials = () => {
       <div className="testimonial-cards">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="testimonial-card">
-            <img src={testimonial.image} alt={testimonial.name} />
+            <img src={testimonial.image || "/placeholder.svg"} alt={testimonial.name} />
             <p>"{testimonial.feedback}"</p>
             <h4>{testimonial.name}</h4>
           </div>

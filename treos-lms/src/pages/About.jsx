@@ -1,5 +1,7 @@
 import React from 'react';
 import './About.css';
+import setoImage from '../SETO2.jpg';
+import toluwaImage from '../my picture.jpg';
 
 const About = () => {
   return (
@@ -42,14 +44,14 @@ const About = () => {
         <h2>Meet the Team</h2>
         <div className="team-members">
           <div className="team-member">
-            <img src="src/SETO2.jpg" alt="Oluwaseto David" />
+            <img src={setoImage || "/placeholder.svg"} alt="Oluwaseto David" />
             <div className="member-info">
               <h3>Oluwaseto David</h3>
               <p>Founder</p>
             </div>
           </div>
           <div className="team-member">
-            <img src="src/my picture.jpg" alt="Ikumawoyi Toluwa" />
+            <img src={toluwaImage || "/placeholder.svg"} alt="Ikumawoyi Toluwa" />
             <div className="member-info">
               <h3>Ikumawoyi Toluwalase</h3>
               <p>Software Developer</p>
