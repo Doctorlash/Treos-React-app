@@ -17,8 +17,7 @@ const Blog = () => {
         const querySnapshot = await getDocs(collection(db, "posts"));
         const posts = querySnapshot.docs.map(doc => ({
           id: doc.id,
-          ...doc.data(),
-          imageUrl: doc.data().imageUrl ? new URL(doc.data().imageUrl, import.meta.url).href : placeholderImage
+          ...doc.data()
         }));
         setBlogPosts(posts);
         setLoading(false);

@@ -118,7 +118,7 @@ const Services = () => {
         {servicesList.map((service, index) => (
           <div className="service-item" key={index}>
             <div className="service-icon">
-              {React.createElement(service.icon, { size: 40 })}
+              {React.createElement(service.icon)}
             </div>
             <h2>{service.title}</h2>
             <p>{service.description}</p>
@@ -157,3 +157,4 @@ const Services = () => {
   );
 };
 
+export default Services;
