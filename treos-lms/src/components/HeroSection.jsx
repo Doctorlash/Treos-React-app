@@ -2,8 +2,8 @@ import React from 'react';
 import ImageSlider from '../components/Imageslider';
 import { motion } from 'framer-motion';
 import './Hero.css';
-import heroImage from '../2.jpg';
-import logoImage from '../SAGE LOGO ICON BLUE.png';
+import heroImage from '../set.jpg';
+import logoImage from '../SAGE WHITE.png';
 
 const Hero = () => {
   return (

@@ -4,8 +4,8 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import './Contact.css';
 import { FaBuilding, FaPhoneAlt, FaShareAlt, FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
 
-// Import map URL
-const mapUrl = new URL('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596698663!2d-74.25987368715491!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1627309374797!5m2!1sen!2sus', import.meta.url);
+// Import map URL - Updated coordinates for Bodija, Ibadan
+const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2904824029713!2d3.9069833!3d7.4340397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ed27f5e32b79%3A0x3b23e2f9b3e7ee04!2sBodija%2C%20Ibadan!5e0!3m2!1sen!2sng!4v1627309374797!5m2!1sen!2sng";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -78,9 +78,9 @@ const Contact = () => {
                 <FaBuilding size={24} />
               </div>
               <h3>Visit Us</h3>
-              <p>123 Business Street</p>
-              <p>Suite 100</p>
-              <p>City, State 12345</p>
+              <p>10, oshuntokun avenue</p>
+              <p>Bodija, Ibadan</p>
+              <p> oyo state, Nigeria</p>
             </div>
 
             <div className="contact-card glass-effect">
@@ -88,8 +88,8 @@ const Contact = () => {
                 <FaPhoneAlt size={24} />
               </div>
               <h3>Get In Touch</h3>
-              <p>(555) 123-4567</p>
-              <p>info@sageconsolidated.com</p>
+              <p>(234)09079310885</p>
+              <p>oluwasetodavids@gmail.com</p>
               <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
             </div>
 
@@ -115,12 +115,13 @@ const Contact = () => {
           <div className="map-container glass-effect">
             <iframe 
               title="Office Location"
-              src={mapUrl || "about:blank"}
+              src={mapUrl}
               width="100%"
               height="450"
               style={{ border: 0, borderRadius: '10px' }}
               allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </section>

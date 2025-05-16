@@ -77,18 +77,18 @@ const Footer = () => {
           <h4>Contact Us</h4>
           <div className="contact-info">
             <motion.a 
-              href="mailto:info@sageconsolidated.com" 
+              href="../contacts" 
               className="contact-link"
               whileHover={{ color: '#4A90E2', scale: 1.02 }}
             >
-              info@sageconsolidated.com
+              oluwasetodavids@gmail.com
             </motion.a>
             <motion.a 
-              href="tel:+11234567890" 
+              href="../contacts" 
               className="contact-link"
               whileHover={{ color: '#4A90E2', scale: 1.02 }}
             >
-              +1 (123) 456-7890
+              +2349079310885
             </motion.a>
           </div>
         </motion.div>
