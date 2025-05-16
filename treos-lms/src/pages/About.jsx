@@ -2,11 +2,12 @@ import React from 'react';
 import './About.css';
 import setoImage from '../SETO2.jpg';
 import toluwaImage from '../my picture.jpg';
+import heroImage from '../6.jpg';
 
 const About = () => {
   return (
     <div className="about">
-      <section className="about-hero">
+      <section className="about-hero" style={{backgroundImage: `url(${heroImage || "/placeholder.svg"})`}}>
         <div className="about-hero-text">
           <h1>About Us</h1>
           

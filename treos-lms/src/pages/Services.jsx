@@ -9,6 +9,7 @@ import { FaUsers, FaPencilAlt, FaAd, FaChartLine, FaCog, FaEnvelope, FaComments,
 import project1Image from '../1.jpg';
 import project2Image from '../2.jpg';
 import project3Image from '../3.jpg';
+import heroBackground from '../9.jpg';
 
 // Import partner logos
 const googleLogo = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
@@ -107,7 +108,7 @@ const Services = () => {
 
   return (
     <div className="services">
-      <section className="services-hero">
+      <section className="services-hero" style={{backgroundImage: `url(${heroBackground})`}}>
         <div className="services-hero-text">
           <h1>What we Offer</h1>
           <p className="hero-subtitle">Innovative solutions that drive growth and engagement in the digital age</p>

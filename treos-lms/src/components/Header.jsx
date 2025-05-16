@@ -57,7 +57,14 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Link to="/Blog">Blog</Link>
+            
           </motion.li>
+          <motion.li className="nav-item"
+            whileHover={{ scale: 1.1, color: '#ff5722' }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/login">Login</Link>
+            </motion.li>
         </motion.ul>
       </nav>
 

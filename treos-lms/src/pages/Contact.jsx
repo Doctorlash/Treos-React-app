@@ -63,7 +63,12 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      <section className="contact-hero">
+      <section className="contact-hero" style={{
+        backgroundImage: "url('../4.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <div className="contact-hero-content">
           <h1>Let's Start a Conversation</h1>
           <p className="hero-subtitle">We're here to help bring your vision to life</p>
